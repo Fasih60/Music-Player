@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HotX Music Player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/icon" href="./icon.jpg">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="hamburger-menu">☰</button>
+            <div class="logo">🎵 HotX</div>
+        </div>
+
+        <div class="search-area">
+            <input type="text" id="searchInput" placeholder="Search for songs...">
+        </div>
+
+        <div class="navbar-right">
+            <button onclick="filterSongs('all')">All</button>
+            <button onclick="filterSongs('songs')">Songs</button>
+            <button onclick="filterSongs('naats')">Naats</button>
+            <button onclick="filterSongs('liked')">Liked</button>
+            <button onclick="filterSongs('recent')">Recent</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar-left">
+            <h2>My Library</h2>
+            <ul>
+                <li onclick="filterSongs('all')">All 🎵</li>
+                <li onclick="filterSongs('songs')">Songs 🎶</li>
+                <li onclick="filterSongs('naats')">Naats 🕌</li>
+                <li onclick="filterSongs('liked')">Liked ❤️</li>
+                <li onclick="filterSongs('recent')">Recent 🔁</li>
+            </ul>
+
+            <div class="account-section">
+                <div class="user-profile">
+                    <div class="user-avatar">U</div>
+                    <div class="user-name">Username</div>
+                </div>
+
+                <button class="account-btn"> <i>⚙️</i> Settings </button>
+                <button class="account-btn"> <i>👤</i> Profile </button>
+                <button class="account-btn"> <i>🔒</i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <main class="center-content">
+            <div class="song-grid-wrapper">
+                <div id="songGrid" class="song-grid"></div>
+            </div>
+
+            <div class="player-controls">
+                <audio id="audio" src=""></audio>
+                <div class="progress-container" id="progress-container">
+                <span id="current-time">00:00</span>
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <span id="duration">00:00</span>
+                </div>
+                <div class="controls">
+                <button id="prev" class="control-btn">⏮️</button>
+                <button id="play" class="control-btn">▶️</button>
+                <button id="next" class="control-btn">⏭️</button>
+                <button id="like-btn" class="control-btn">🤍</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="music-player">
+            <h4 class="current-heading">🎵 Currently Playing</h4>
+
+            <div class="player-top">
+                <div class="cover">
+                <img src="images/default.jpg" alt="Album Art" id="cover">
+                </div>
+                <div class="song-info">
+                <h2 id="title">Song Title</h2>
+                <p id="artist">Artist Name</p>
+                </div>
+            </div>
+            <div class="player-bottom">
+                <h4 class="recent-heading">🎵 Recently Played</h4>
+                <ul id="recentList"></ul>
+            </div>
+        </aside>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
