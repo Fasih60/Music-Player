@@ -168,15 +168,7 @@ let songs = [
         image: "naats/Tajdar-e-Haram cover.jpeg",
         category: "naats",
         liked: false,
-    },
-    {
-        title: "Balaghal Ula Bi Kamaalihi - Ali Zafar",
-        artist: "Ali Zafar",
-        file: "naats/Balaghal Ula Bi Kamaalihi - Ali Zafar .mp3",
-        image: "naats/Balaghal Ula Bi Kamaalihi cover.jpg",
-        category: "naats",
-        liked: false,
-    },
+    }
 ];
 
 const storedSongs = localStorage.getItem("songs");
